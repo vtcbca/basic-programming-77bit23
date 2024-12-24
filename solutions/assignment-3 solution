@@ -1,0 +1,24 @@
+def fibonacci_terms(n):
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+
+def fibonacci_max_value(max_value):
+    fib_sequence = []
+    a, b = 0, 1
+    while a < max_value:
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+choice = input("Choose an option (1 for number of terms, 2 for max value): ")
+if choice == '1':
+    n = int(input("Enter the number of terms: "))
+    print(f"Fibonacci sequence up to {n} terms: {fibonacci_terms(n)}")
+elif choice == '2':
+    max_value = int(input("Enter the maximum value: "))
+    print(f"Fibonacci sequence up to maximum value {max_value}: {fibonacci_max_value(max_value)}")
+else:
+    print("Invalid choice. Please select 1 or 2.")
